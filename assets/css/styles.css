@@ -813,21 +813,88 @@ footer {
       min-width: 100%;
   }
 }
+
 /*=============== BREAKPOINTS ===============*/
-/* For large devices */
+
+/* Keep the laptop layout and typography on tablets and phones */
 @media screen and (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 992px) {
+  .home__container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about__container {
+    grid-template-columns: 4fr 8fr;
+  }
+
+  .resume__container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-/* For medium devices */
 @media screen and (max-width: 768px) {
+  .nav {
+    gap: 10px;
+  }
+
+  .nav__list {
+    flex-wrap: wrap;
+    column-gap: 12px;
+  }
+
+  .home__container,
+  .about__container,
+  .resume__container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home__image-wrapper {
+    margin-inline: auto;
+  }
+
+  .about__image-wrapper {
+    max-width: 100%;
+  }
 }
 
-/* For small devices */
 @media screen and (max-width: 576px) {
+  .nav {
+    height: auto;
+    min-height: var(--header-height);
+    flex-wrap: wrap;
+  }
+
+  .nav__list {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .home__container,
+  .about__container,
+  .resume__container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-carousel {
+    overflow-x: auto;
+  }
 }
 
 @media screen and (max-width: 450px) {
+  .container {
+    padding-inline: 8px;
+  }
+
+  .home__container,
+  .about__container,
+  .resume__container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 }
